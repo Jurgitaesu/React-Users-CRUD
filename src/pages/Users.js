@@ -1,7 +1,7 @@
 import UpdateUser from "../components/UpdateUser";
 import {useState} from 'react';
 
-function Users({users, deleteId, findUser, userInfo}) {
+function Users({users, deleteId, findUser, userInfo, updateUser}) {
     const [update, setUpdate] = useState(false);
 
     function updateUserOpen(id) {
@@ -11,6 +11,10 @@ function Users({users, deleteId, findUser, userInfo}) {
 
     function updateUserClose(){
         setUpdate(false);
+    }
+
+    function sendUpdateInfo(userData){
+        updateUser(userData);
     }
 
     return (
@@ -43,10 +47,10 @@ function Users({users, deleteId, findUser, userInfo}) {
                         </tr>
                     )}
                     {update? <UpdateUser
-                        updateUser={updateUserClose}
+                        // updateUser={updateUserClose}
                         userInfo={userInfo}
+                        sendUpdateInfo={sendUpdateInfo}
                         />
-
                         : null}
                     </tbody>
                 </table> : null}

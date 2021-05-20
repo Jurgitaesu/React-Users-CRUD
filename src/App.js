@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Navbar from "./components/Navbar";
 import Users from "./pages/Users";
 import Form from "./pages/Form";
+import UpdateUser from "./components/UpdateUser";
 
 function App() {
     const [users, setUsers] = useState('');
@@ -50,6 +51,22 @@ function App() {
         setUserInfo(data.userInfo[0]);
     }
 
+    async function updateUser(user) {
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }
+        const response = await fetch('http://localhost:3002/update', options);
+        const data = await response.json();
+        setMessage(data.message);
+        if (data.success) {
+            setUsers(data.users);
+        }
+    }
+
     return (
         <Router>
             <Navbar/>
@@ -60,6 +77,7 @@ function App() {
                         deleteId={deleteUser}
                         findUser={findUser}
                         userInfo={userInfo}
+                        updateUser={updateUser}
                     />
                 </Route>
                 <Route path="/form">

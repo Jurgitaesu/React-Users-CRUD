@@ -32,4 +32,19 @@ module.exports = {
         let userInfo = await usersDb.find({_id: id})
         res.send({success: true, message: null, userInfo})
     },
+    update: async (req, res) => {
+        console.log(req.body)
+        let user = req.body
+        await usersDb.findOneAndUpdate(
+            {_id: user.id},
+            {
+                name: user.name,
+                age: user.age,
+                email: user.email,
+                password: user.password
+            },
+            {returnOriginal: false})
+        const users = await getAll();
+        res.send({success: true, message: "Vartotojas atnaujintas", users})
+    }
 }

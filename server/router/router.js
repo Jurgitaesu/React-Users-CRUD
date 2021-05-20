@@ -7,5 +7,6 @@ router.get('/show', controller.show);
 router.get('/delete/:id', controller.delete);
 router.get('/user/:id', controller.findUser);
 router.post('/upload', validateInput, controller.upload);
+router.post('/update', validateInput, controller.update);
 
 module.exports = router;
