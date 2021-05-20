@@ -1,7 +1,7 @@
-import UpdateUser from "../components/UpdateUser";
 import {useState} from 'react';
+import UpdateUser from "../components/UpdateUser";
 
-function Users({users, deleteId, findUser, userInfo, updateUser}) {
+function Users({updateMessage, users, deleteId, findUser, userInfo, updateUser}) {
     const [close, setClose] = useState(false);
 
     function updateUserOpen(id) {
@@ -9,14 +9,15 @@ function Users({users, deleteId, findUser, userInfo, updateUser}) {
         setClose(true);
     }
 
-    function sendUpdateInfo(userData){
+    function sendUpdateInfo(userData) {
         updateUser(userData);
         setClose(false);
     }
 
     return (
         <div className="pt-50">
-            <h2 className="text-center my-40">Vartotojai</h2>
+            <h2 className="text-center mt-40">Vartotojai</h2>
+            <div className="text-center h-20 mb-10"> {!!updateMessage ? updateMessage : null}</div>
             {!!users ?
                 <table>
                     <thead>
@@ -43,9 +44,9 @@ function Users({users, deleteId, findUser, userInfo, updateUser}) {
                                 <i className="fas fa-pen-alt"></i></td>
                         </tr>
                     )}
-                    {close? <UpdateUser
-                        userInfo={userInfo}
-                        sendUpdateInfo={sendUpdateInfo}
+                    {close ? <UpdateUser
+                            userInfo={userInfo}
+                            sendUpdateInfo={sendUpdateInfo}
                         />
                         : null}
                     </tbody>

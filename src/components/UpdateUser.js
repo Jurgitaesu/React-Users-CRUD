@@ -5,7 +5,7 @@ function UpdateUser({userInfo, sendUpdateInfo}) {
     const age = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
-    console.log(userInfo)
+
     if (!!userInfo) {
         name.current.value = userInfo.name;
         age.current.value = userInfo.age;
@@ -22,10 +22,10 @@ function UpdateUser({userInfo, sendUpdateInfo}) {
             password: password.current.value
         }
         sendUpdateInfo(updatedUser);
-        // name.current.value = '';
-        // age.current.value = '';
-        // email.current.value = '';
-        // password.current.value = '';
+        name.current.value = '';
+        age.current.value = '';
+        email.current.value = '';
+        password.current.value = '';
     }
 
     return (

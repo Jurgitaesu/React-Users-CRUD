@@ -10,7 +10,6 @@ module.exports = {
         res.send({success: true, message: null, users});
     },
     upload: async (req, res) => {
-        console.log(req.body)
         const {name, age, email, password} = req.body
         const user = new usersDb();
         user.name = name;
@@ -33,7 +32,6 @@ module.exports = {
         res.send({success: true, message: null, userInfo})
     },
     update: async (req, res) => {
-        console.log(req.body)
         let user = req.body
         await usersDb.findOneAndUpdate(
             {_id: user.id},

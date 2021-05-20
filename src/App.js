@@ -6,8 +6,14 @@ import Form from "./pages/Form";
 
 function App() {
     const [users, setUsers] = useState('');
-    const [message, setMessage] = useState('');
+    const [formMessage, setFormMessage] = useState('');
+    const [updateMessage, setUpdateMessage] = useState('');
     const [userInfo, setUserInfo] = useState('');
+
+    setTimeout(function () {
+        setFormMessage('');
+        setUpdateMessage('');
+    }, 4000);
 
     useEffect(() => {
         async function showUsers() {
@@ -20,7 +26,6 @@ function App() {
     }, [])
 
     async function addUser(user) {
-        console.log(user);
         const options = {
             method: "POST",
             headers: {
@@ -30,8 +35,7 @@ function App() {
         }
         const response = await fetch('http://localhost:3002/upload', options);
         const data = await response.json();
-        console.log(data)
-        setMessage(data.message);
+        setFormMessage(data.message);
         if (data.success) {
             setUsers(data.users);
         }
@@ -40,7 +44,7 @@ function App() {
     async function deleteUser(id) {
         const response = await fetch(`http://localhost:3002/delete/${id}`);
         const data = await response.json();
-        setMessage(data.message);
+        setUpdateMessage(data.message);
         setUsers(data.users);
     }
 
@@ -60,9 +64,10 @@ function App() {
         }
         const response = await fetch('http://localhost:3002/update', options);
         const data = await response.json();
-        setMessage(data.message);
+        setUpdateMessage(data.message);
         if (data.success) {
             setUsers(data.users);
+            setUserInfo('');
         }
     }
 
@@ -72,6 +77,7 @@ function App() {
             <Switch>
                 <Route exact path="/">
                     <Users
+                        updateMessage={updateMessage}
                         users={users}
                         deleteId={deleteUser}
                         findUser={findUser}
@@ -81,7 +87,7 @@ function App() {
                 </Route>
                 <Route path="/form">
                     <Form
-                        message={message}
+                        formMessage={formMessage}
                         addUser={addUser}
                     />
                 </Route>

@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 
-function Form({message, addUser}) {
+function Form({formMessage, addUser}) {
     const name = useRef();
     const age = useRef();
     const email = useRef();
@@ -28,7 +28,7 @@ function Form({message, addUser}) {
                 <input className="my-10" ref={age} type="number" placeholder="Amžius" min="0"/>
                 <input className="my-10" ref={email} type="email" placeholder="Elektroninis paštas"/>
                 <input className="my-10" ref={password} type="password" placeholder="Slaptažodis"/>
-                <div className="text-center h-20"> {!!message ? message : null}</div>
+                <div className="text-center h-20"> {!!formMessage ? formMessage : null}</div>
                 <button onClick={submitUserForm} className="btn-submit m-auto">Patvirtinti</button>
             </div>
         </div>

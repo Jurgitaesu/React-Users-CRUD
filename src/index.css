@@ -69,6 +69,14 @@ body {
     margin-bottom: 40px;
 }
 
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
 /* Inputs */
 
 input {
@@ -83,7 +91,8 @@ button {
 }
 
 .btn-submit {
-    padding: 10px;
+    font-size: 15px;
+    padding: 15px;
     background: #8A6691;
     color: white;
     transition: 0.3s;
