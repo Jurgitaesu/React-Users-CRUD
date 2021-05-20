@@ -1,6 +1,18 @@
 import UpdateUser from "../components/UpdateUser";
+import {useState} from 'react';
 
-function Users({users, deleteId}) {
+function Users({users, deleteId, findUser, userInfo}) {
+    const [update, setUpdate] = useState(false);
+
+    function updateUserOpen(id) {
+        findUser(id);
+        setUpdate(true);
+    }
+
+    function updateUserClose(){
+        setUpdate(false);
+    }
+
     return (
         <div className="pt-50">
             <h2 className="text-center my-40">Vartotojai</h2>
@@ -26,10 +38,16 @@ function Users({users, deleteId}) {
                             <td onClick={() => deleteId(user._id)}>
                                 <i className="fas fa-trash-alt"></i>
                             </td>
-                            <td><i className="fas fa-pen-alt"></i></td>
+                            <td onClick={() => updateUserOpen(user._id)}>
+                                <i className="fas fa-pen-alt"></i></td>
                         </tr>
                     )}
-                    <UpdateUser />
+                    {update? <UpdateUser
+                        updateUser={updateUserClose}
+                        userInfo={userInfo}
+                        />
+
+                        : null}
                     </tbody>
                 </table> : null}
         </div>

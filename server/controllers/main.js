@@ -27,4 +27,9 @@ module.exports = {
         const users = await getAll();
         res.send({success: true, message: 'Vartotojas ištrintas', users});
     },
+    findUser: async (req, res) => {
+        const {id} = req.params;
+        let userInfo = await usersDb.find({_id: id})
+        res.send({success: true, message: null, userInfo})
+    },
 }

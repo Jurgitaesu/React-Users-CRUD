@@ -7,6 +7,7 @@ import Form from "./pages/Form";
 function App() {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
+    const [userInfo, setUserInfo] = useState('');
 
     useEffect(() => {
         async function showUsers() {
@@ -43,6 +44,12 @@ function App() {
         setUsers(data.users);
     }
 
+    async function findUser(id) {
+        const response = await fetch(`http://localhost:3002/user/${id}`);
+        const data = await response.json();
+        setUserInfo(data.userInfo[0]);
+    }
+
     return (
         <Router>
             <Navbar/>
@@ -51,6 +58,8 @@ function App() {
                     <Users
                         users={users}
                         deleteId={deleteUser}
+                        findUser={findUser}
+                        userInfo={userInfo}
                     />
                 </Route>
                 <Route path="/form">
