@@ -75,7 +75,6 @@ body {
     padding: 10px;
 }
 
-
 /* Button */
 
 button{
@@ -85,7 +84,7 @@ button{
 
 .btn-submit{
     padding: 10px;
-    background: rgb(125, 67, 145);
+    background: #8A6691;
     color: white;
     transition: 0.3s;
     border-radius: 10px;

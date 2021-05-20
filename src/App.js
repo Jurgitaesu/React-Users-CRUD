@@ -14,6 +14,7 @@ function App() {
             const data = await response.json();
             setUsers(data.users);
         }
+
         showUsers();
     }, [])
 
@@ -35,13 +36,22 @@ function App() {
         }
     }
 
+    async function deleteUser(id) {
+        const response = await fetch(`http://localhost:3002/delete/${id}`);
+        const data = await response.json();
+        setMessage(data.message);
+        setUsers(data.users);
+    }
+
     return (
         <Router>
             <Navbar/>
             <Switch>
                 <Route exact path="/">
                     <Users
-                        users={users}/>
+                        users={users}
+                        deleteId={deleteUser}
+                    />
                 </Route>
                 <Route path="/form">
                     <Form
