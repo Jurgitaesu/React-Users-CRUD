@@ -7,7 +7,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/** Navbar **/
+/* Navbar */
 
 .navbar{
     width: 100%;
@@ -33,7 +33,7 @@ body {
     border-bottom: 2px solid black;
 }
 
-/*Flex parameters*/
+/* Flex parameters */
 
 .d-flex {
     display: flex;
@@ -47,13 +47,13 @@ body {
     justify-content: center;
 }
 
-/*Text alignment*/
+/* Text alignment */
 
 .text-center {
     text-align: center;
 }
 
-/*Margins*/
+/* Margins */
 
 .m-auto {
     margin: 20px auto;
@@ -64,14 +64,19 @@ body {
     margin-bottom: 10px;
 }
 
-/*Paddings*/
+.my-40{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Paddings */
 
 .pd-10 {
     padding: 10px;
 }
 
 
-/*Button*/
+/* Button */
 
 button{
     margin: 10px;
@@ -90,14 +95,47 @@ button{
     transform: scale(1.05);
 }
 
-/*Width*/
+/* Width */
 
 .w-450 {
     width: 450px;
 }
 
-/*Height*/
+/* Height */
 
 .h-20{
     height: 20px;
 }
+
+/*Table*/
+
+table {
+    margin: auto;
+    width: 80%;
+}
+
+th {
+    border: 1px solid grey;
+    padding: 15px;
+    text-align: center;
+    background-color: #8a6691;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #9e81a4;
+}
+
+tr:nth-child(odd) {
+    background-color: #cec6d0;
+}
+
+td{
+    padding: 10px;
+    text-align: center;
+}
+
+i:hover{
+    cursor: pointer;
+}
+

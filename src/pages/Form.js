@@ -22,7 +22,7 @@ function Form({message, addUser}) {
 
     return (
         <div className="w-80p m-auto">
-            <h2 className="text-center">Naujo vartotojo sukūrimas</h2>
+            <h2 className="text-center my-40">Naujo vartotojo sukūrimas</h2>
             <div className="d-flex dir-column j-center w-450 m-auto">
                 <input className="pd-10 my-10" ref={name} type="text" placeholder="Vartotojo vardas"/>
                 <input className="pd-10 my-10" ref={age} type="number" placeholder="Amžius" min="0"/>

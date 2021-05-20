@@ -1,9 +1,34 @@
-import React from 'react';
-
-function Users(props) {
+function Users({users}) {
     return (
-        <div>
-
+        <div className="pt-50">
+            <h2 className="text-center my-40">Vartotojai</h2>
+            {!!users ?
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Vartotojo vardas</th>
+                        <th>Amžius</th>
+                        <th>Elektroninis paštas</th>
+                        <th>Slaptažodis</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {users.map(user =>
+                        <tr key={user._id}>
+                            <td>{user.name}</td>
+                            <td>{user.age}</td>
+                            <td>{user.email}</td>
+                            <td>{user.password}</td>
+                            <td>
+                                <i className="fas fa-trash-alt"></i>
+                            </td>
+                            <td><i className="fas fa-pen-alt"></i></td>
+                        </tr>
+                    )}
+                    </tbody>
+                </table> : null}
         </div>
     );
 }

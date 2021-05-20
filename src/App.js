@@ -6,9 +6,16 @@ import Form from "./pages/Form";
 
 function App() {
     const [users, setUsers] = useState('');
-    const [message, setMessage]=useState('');
+    const [message, setMessage] = useState('');
 
-
+    useEffect(() => {
+        async function showUsers() {
+            const response = await fetch('http://localhost:3002/show');
+            const data = await response.json();
+            setUsers(data.users);
+        }
+        showUsers();
+    }, [])
 
     async function addUser(user) {
         console.log(user);
@@ -23,9 +30,9 @@ function App() {
         const data = await response.json();
         console.log(data)
         setMessage(data.message);
-        // if (data.success) {
-        //     setUsers(data.users);
-        // }
+        if (data.success) {
+            setUsers(data.users);
+        }
     }
 
     return (
@@ -33,13 +40,13 @@ function App() {
             <Navbar/>
             <Switch>
                 <Route exact path="/">
-                    <Users />
+                    <Users
+                        users={users}/>
                 </Route>
                 <Route path="/form">
                     <Form
                         message={message}
                         addUser={addUser}
-
                     />
                 </Route>
             </Switch>
