@@ -14,18 +14,17 @@ module.exports = (req, res, next) => {
         return errorSend('Vartotojo vardas turi būti 3 - 50 simbolių ilgio');
     }
 
-    if (typeof age === 'number' || age < 0 ) {
+    if (typeof age === 'number' || age < 0) {
         return errorSend('Amžius turi būti skaičius');
     }
 
-    if(!email.includes('@') || !email.includes('.')){
+    if (!email.includes('@') || !email.includes('.')) {
         return errorSend('Elektroninis paštas turi turėti @ ir . simbolius');
     }
 
     if (password.length > 50 || password.length < 3) {
         return errorSend('Slaptažodis turi būti 3 - 50 simbolių ilgio');
     }
-
 
     next();
 }

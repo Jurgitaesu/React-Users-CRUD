@@ -34,7 +34,7 @@ function Users({updateMessage, users, deleteId, findUser, userInfo, updateUser})
                     {users.map(user =>
                         <tr key={user._id}>
                             <td>{user.name}</td>
-                            <td>{user.age}</td>
+                            <td>{user.age} metai</td>
                             <td>{user.email}</td>
                             <td>{user.password}</td>
                             <td onClick={() => deleteId(user._id)}>

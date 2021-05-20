@@ -1,10 +1,10 @@
 import {useRef} from 'react';
 
 function Form({formMessage, addUser}) {
-    const name = useRef();
-    const age = useRef();
-    const email = useRef();
-    const password = useRef();
+    const name = useRef(null);
+    const age = useRef(null);
+    const email = useRef(null);
+    const password = useRef(null);
 
     function submitUserForm() {
         const user = {
@@ -13,7 +13,7 @@ function Form({formMessage, addUser}) {
             email: email.current.value,
             password: password.current.value
         }
-        addUser(user)
+        addUser(user);
         name.current.value = "";
         age.current.value = "";
         email.current.value = "";
@@ -21,7 +21,7 @@ function Form({formMessage, addUser}) {
     }
 
     return (
-        <div className="w-80p m-auto">
+        <div className="m-auto">
             <h2 className="text-center my-40">Naujo vartotojo sukūrimas</h2>
             <div className="d-flex dir-column j-center w-450 m-auto">
                 <input className="my-10" ref={name} type="text" placeholder="Vartotojo vardas"/>

@@ -65,9 +65,9 @@ function App() {
         const response = await fetch('http://localhost:3002/update', options);
         const data = await response.json();
         setUpdateMessage(data.message);
+        setUserInfo('');
         if (data.success) {
             setUsers(data.users);
-            setUserInfo('');
         }
     }
 
