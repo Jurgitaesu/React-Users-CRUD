@@ -2,19 +2,16 @@ import UpdateUser from "../components/UpdateUser";
 import {useState} from 'react';
 
 function Users({users, deleteId, findUser, userInfo, updateUser}) {
-    const [update, setUpdate] = useState(false);
+    const [close, setClose] = useState(false);
 
     function updateUserOpen(id) {
         findUser(id);
-        setUpdate(true);
-    }
-
-    function updateUserClose(){
-        setUpdate(false);
+        setClose(true);
     }
 
     function sendUpdateInfo(userData){
         updateUser(userData);
+        setClose(false);
     }
 
     return (
@@ -46,8 +43,7 @@ function Users({users, deleteId, findUser, userInfo, updateUser}) {
                                 <i className="fas fa-pen-alt"></i></td>
                         </tr>
                     )}
-                    {update? <UpdateUser
-                        // updateUser={updateUserClose}
+                    {close? <UpdateUser
                         userInfo={userInfo}
                         sendUpdateInfo={sendUpdateInfo}
                         />

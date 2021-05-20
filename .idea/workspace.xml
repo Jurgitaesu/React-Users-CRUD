@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="773e3c60-6099-4e86-b044-27a25b65dd1c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UpdateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpdateUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621488654270</updated>
-      <workItem from="1621488656192" duration="14479000" />
+      <workItem from="1621488656192" duration="18000000" />
     </task>
     <servers />
   </component>

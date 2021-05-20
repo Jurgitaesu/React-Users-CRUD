@@ -1,12 +1,11 @@
 import {useRef} from 'react';
 
 function UpdateUser({userInfo, sendUpdateInfo}) {
-    console.log(userInfo)
-    // console.log(updateUser)
     const name = useRef(null);
     const age = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
+    console.log(userInfo)
     if (!!userInfo) {
         name.current.value = userInfo.name;
         age.current.value = userInfo.age;
@@ -14,7 +13,7 @@ function UpdateUser({userInfo, sendUpdateInfo}) {
         password.current.value = userInfo.password;
     }
 
-    function updateSelectedUser() {
+    function confirmUpdate() {
         const updatedUser = {
             id: userInfo._id,
             name: name.current.value,
@@ -23,10 +22,10 @@ function UpdateUser({userInfo, sendUpdateInfo}) {
             password: password.current.value
         }
         sendUpdateInfo(updatedUser);
-        name.current.value = '';
-        age.current.value = '';
-        email.current.value = '';
-        password.current.value = '';
+        // name.current.value = '';
+        // age.current.value = '';
+        // email.current.value = '';
+        // password.current.value = '';
     }
 
     return (
@@ -36,9 +35,8 @@ function UpdateUser({userInfo, sendUpdateInfo}) {
             <td><input ref={email} type="text"/></td>
             <td><input ref={password} type="text"/></td>
             <td></td>
-            <td onClick={updateSelectedUser}><i className="fas fa-check"></i></td>
+            <td onClick={confirmUpdate}><i className="fas fa-check"></i></td>
         </tr>
-
     );
 }
 

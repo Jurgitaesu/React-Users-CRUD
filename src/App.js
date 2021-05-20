@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react';
 import Navbar from "./components/Navbar";
 import Users from "./pages/Users";
 import Form from "./pages/Form";
-import UpdateUser from "./components/UpdateUser";
 
 function App() {
     const [users, setUsers] = useState('');
