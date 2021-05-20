@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {useState, useEffect} from 'react';
+import Navbar from "./components/Navbar";
+import Users from "./pages/Users";
+import Form from "./pages/Form";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [users, setUsers] = useState('');
+    const [message, setMessage]=useState('');
+
+
+
+    async function addUser(user) {
+        console.log(user);
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }
+        const response = await fetch('http://localhost:3002/upload', options);
+        const data = await response.json();
+        console.log(data)
+        setMessage(data.message);
+        // if (data.success) {
+        //     setUsers(data.users);
+        // }
+    }
+
+    return (
+        <Router>
+            <Navbar/>
+            <Switch>
+                <Route exact path="/">
+                    <Users />
+                </Route>
+                <Route path="/form">
+                    <Form
+                        message={message}
+                        addUser={addUser}
+
+                    />
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

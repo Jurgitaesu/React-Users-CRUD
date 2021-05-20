@@ -1,13 +1,103 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    background: rgb(217,152,149);
+    background: linear-gradient(90deg, rgba(217,152,149,1) 0%, rgba(187,138,196,1) 90%);
+    height: 97vh;
+    font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/** Navbar **/
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: #cfa0cf;
+}
+
+.nav-links {
+    float: right;
+    margin: 20px;
+}
+
+.nav-links > a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s;
+}
+
+.nav-links > a:hover {
+    border-bottom: 2px solid black;
+}
+
+/*Flex parameters*/
+
+.d-flex {
+    display: flex;
+}
+
+.dir-column {
+    flex-direction: column;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+/*Text alignment*/
+
+.text-center {
+    text-align: center;
+}
+
+/*Margins*/
+
+.m-auto {
+    margin: 20px auto;
+}
+
+.my-10{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*Paddings*/
+
+.pd-10 {
+    padding: 10px;
+}
+
+
+/*Button*/
+
+button{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn-submit{
+    padding: 10px;
+    background: rgb(125, 67, 145);
+    color: white;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.btn-submit:hover{
+    transform: scale(1.05);
+}
+
+/*Width*/
+
+.w-450 {
+    width: 450px;
+}
+
+/*Height*/
+
+.h-20{
+    height: 20px;
 }
