@@ -25,6 +25,6 @@ module.exports = {
         const {id} = req.params;
         await usersDb.findOneAndDelete({_id: id});
         const users = await getAll();
-        res.send({success: true, message: 'User deleted', users});
+        res.send({success: true, message: 'Vartotojas ištrintas', users});
     },
 }

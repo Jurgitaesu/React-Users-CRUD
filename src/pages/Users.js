@@ -1,3 +1,5 @@
+import UpdateUser from "../components/UpdateUser";
+
 function Users({users, deleteId}) {
     return (
         <div className="pt-50">
@@ -27,6 +29,7 @@ function Users({users, deleteId}) {
                             <td><i className="fas fa-pen-alt"></i></td>
                         </tr>
                     )}
+                    <UpdateUser />
                     </tbody>
                 </table> : null}
         </div>

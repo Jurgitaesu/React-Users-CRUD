@@ -1,15 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgb(217,152,149);
-    background: linear-gradient(90deg, rgba(217,152,149,1) 0%, rgba(187,138,196,1) 90%);
+    background: rgb(217, 152, 149);
+    background: linear-gradient(90deg, rgba(217, 152, 149, 1) 0%, rgba(187, 138, 196, 1) 90%);
     height: 97vh;
     font-family: 'Poppins', sans-serif;
 }
 
 /* Navbar */
 
-.navbar{
+.navbar {
     width: 100%;
     height: 60px;
     background-color: #cfa0cf;
@@ -59,30 +59,30 @@ body {
     margin: 20px auto;
 }
 
-.my-10{
+.my-10 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.my-40{
+.my-40 {
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-/* Paddings */
+/* Inputs */
 
-.pd-10 {
+input {
     padding: 10px;
 }
 
 /* Button */
 
-button{
+button {
     margin: 10px;
     cursor: pointer;
 }
 
-.btn-submit{
+.btn-submit {
     padding: 10px;
     background: #8A6691;
     color: white;
@@ -90,7 +90,7 @@ button{
     border-radius: 10px;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     transform: scale(1.05);
 }
 
@@ -102,7 +102,7 @@ button{
 
 /* Height */
 
-.h-20{
+.h-20 {
     height: 20px;
 }
 
@@ -129,12 +129,14 @@ tr:nth-child(odd) {
     background-color: #cec6d0;
 }
 
-td{
+td {
     padding: 10px;
     text-align: center;
 }
 
-i:hover{
+i:hover {
     cursor: pointer;
 }
+
+
 
