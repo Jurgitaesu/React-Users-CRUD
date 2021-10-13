@@ -1,18 +1,20 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const mongoose = require('mongoose');
 const mainRouter = require('./router/router');
+const PORT = process.env.PORT || 3002;
+const path = require('path');
+const buildPath = path.join(__dirname, '..', 'build');
+
 require('dotenv').config({path: "../.env"});
 
-app.listen(3002);
+app.use(express.static(buildPath));
+app.listen(PORT);
 app.use(express.json());
-app.use(cors());
 
 mongoose.connect(process.env.MONGO_KEY, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
+    useUnifiedTopology: true
 })
     .then(() => {
         console.log('Connection was successful');

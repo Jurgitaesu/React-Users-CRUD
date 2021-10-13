@@ -17,7 +17,7 @@ function App() {
 
     useEffect(() => {
         async function showUsers() {
-            const response = await fetch('http://localhost:3002/show');
+            const response = await fetch('/show');
             const data = await response.json();
             setUsers(data.users);
         }
@@ -33,7 +33,7 @@ function App() {
             },
             body: JSON.stringify(user)
         }
-        const response = await fetch('http://localhost:3002/upload', options);
+        const response = await fetch('/upload', options);
         const data = await response.json();
         setFormMessage(data.message);
         if (data.success) {
@@ -42,14 +42,14 @@ function App() {
     }
 
     async function deleteUser(id) {
-        const response = await fetch(`http://localhost:3002/delete/${id}`);
+        const response = await fetch(`/delete/${id}`);
         const data = await response.json();
         setUpdateMessage(data.message);
         setUsers(data.users);
     }
 
     async function findUser(id) {
-        const response = await fetch(`http://localhost:3002/user/${id}`);
+        const response = await fetch(`/user/${id}`);
         const data = await response.json();
         setUserInfo(data.userInfo[0]);
     }
@@ -62,7 +62,7 @@ function App() {
             },
             body: JSON.stringify(user)
         }
-        const response = await fetch('http://localhost:3002/update', options);
+        const response = await fetch('/update', options);
         const data = await response.json();
         setUpdateMessage(data.message);
         setUserInfo('');
