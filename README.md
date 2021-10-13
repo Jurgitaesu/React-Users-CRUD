@@ -1,31 +1,43 @@
-This project is created using Node.js and React.js
+This project is created using Node JS and React JS
 
 ## Requirements
 
-Node.js version >= 12
+Node JS version >= 12
 
 npm version >= 6.14
 
 ## Installation
 
-Clone the repo in your terminal by clicking the green clone or download button at the top right and copyin the url
+```
+git clone https://github.com/Jurgitaesu/React-Users-CRUD.git
+cd React-Users-CRUD
+npm install
+cd server
+npm install
+```
 
-In your terminal, type `git clone URL`
+## Adding MongoDB connection string
 
-replace URL with the url you copied hit enter This will copy all the files from this repo down to your computer
+Create .env file on project's root directory.
+Add MongoDB connection string in .env
 
-In your terminal, cd into the directory you just created
-
-Type `npm install` to install all dependencies
+```
+MONGO_KEY='[your_connection_string]'
+```
 
 ## Starting server
 
-Start Node.js server:
+Type on project's root directory:
 
-### `cd server` 
+```
+npm start
+```
 
-### `node server.js`
+Open http://localhost:3000/ to see your app.
 
-Open page:
+## Live preview of application:
 
-### `npm start` 
+https://users-crud-mern.herokuapp.com/
+
+
+

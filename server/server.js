@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const mainRouter = require('./router/router');
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 const path = require('path');
 const buildPath = path.join(__dirname, '..', 'build');
 
